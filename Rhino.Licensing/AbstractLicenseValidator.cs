@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Globalization;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography;
@@ -191,7 +192,10 @@ namespace Rhino.Licensing
                     result = DateTime.UtcNow < ExpirationDate;
 
                 if (result)
-                    ValidateUsingNetworkTime();
+                {
+                    if (ConfigurationManager.AppSettings["Rhino.Licensing.CheckNetworkTime"] == "1")
+                        ValidateUsingNetworkTime();
+                }
                 else
                     throw new LicenseExpiredException("Expiration Date : " + ExpirationDate);
                 return true;

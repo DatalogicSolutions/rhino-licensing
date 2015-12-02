@@ -61,7 +61,6 @@
     <Compile Include="Can_check_trial_date.cs" />
     <Compile Include="Can_use_floating_licenses.cs" />
     <Compile Include="Can_use_subscription_license.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="public_and_private.xml" />
@@ -76,6 +75,9 @@
   <ItemGroup>
     <EmbeddedResource Include="floating_private.xml" />
     <EmbeddedResource Include="floating_public.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
